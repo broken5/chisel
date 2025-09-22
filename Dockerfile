@@ -5,7 +5,7 @@ COPY go.* ./
 RUN go mod download
 COPY . ./
 RUN go mod tidy
-RUN go build -v -o spp
+RUN go build -v -o chisel
 
 FROM debian
 COPY --from=builder /app/chisel .
